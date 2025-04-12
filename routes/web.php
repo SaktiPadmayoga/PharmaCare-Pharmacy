@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -18,4 +20,7 @@ Route::get('adminDashboard/customers', [UserController::class, 'showCustomers'])
 Route::get('adminDashboard/staff', [UserController::class, 'showStafs'])->name('admin.staffs');
 Route::post('/supplier', [SupplierController::class, 'store'])->name('supplier.store');
 Route::put('/supplier/{id}', [SupplierController::class, 'update'])->name('supplier.update');
-Route::delete('/supplier/{id}', [SupplierController::class, 'destroy'])->name('supplier.destroy'); 
+Route::delete('/supplier/{id}', [SupplierController::class, 'destroy'])->name('supplier.destroy');
+Route::post('/medicine', [MedicineController::class, 'store'])->name('medicine.store');
+Route::put('/medicine/{id}', [MedicineController::class, 'update'])->name('medicine.update');
+Route::delete('/medicine/{id}', [MedicineController::class, 'destroy'])->name('medicine.destroy');
