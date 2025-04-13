@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\ProcurementController;
 use App\Http\Controllers\SupplierController;
@@ -10,9 +11,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
+Route::get('Pharmacare', [HomeController::class, 'getRandomMedicine'])->name('homepage');
 
 
 Route::post('/users', [UserController::class, 'store'])->name('users.store');
