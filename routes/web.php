@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('Pharmacare', [HomeController::class, 'getRandomMedicine'])->name('homepage');
+Route::get('Pharmacare/Catalogue', [HomeController::class, 'getAllMedicine'])->name('catalogue');
+Route::get('Pharmacare/Catalogue/Filter', [HomeController::class, 'sortByCategory'])->name('catalogue.filter');
+Route::get('/medicine/search', [MedicineController::class, 'search'])->name('medicines.search');
+Route::get('/medicine', [MedicineController::class, 'show'])->name('medicine.show');
 
 
 Route::post('/users', [UserController::class, 'store'])->name('users.store');
